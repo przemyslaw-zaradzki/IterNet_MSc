@@ -23,6 +23,42 @@ raw_test_x_path_STARE = './data/STARE/test/stare-images/*.ppm'
 raw_test_y_path_STARE = './data/STARE/test/labels-ah/*.ppm'
 raw_test_mask_path_STARE = './data/STARE/test/mask/*mask.png'
 
+raw_training_x_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/training/images/*.bmp'
+raw_training_y_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/images/*.bmp'
+raw_test_y_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/mask/*mask.bmp'
+
+raw_training_x_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/training/images/*.bmp'
+raw_training_y_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/images/*.bmp'
+raw_test_y_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/mask/*mask.bmp'
+
+raw_training_x_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/training/images/*.bmp'
+raw_training_y_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/images/*.bmp'
+raw_test_y_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/mask/*mask.bmp'
+
+raw_training_x_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/training/images/*.bmp'
+raw_training_y_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/images/*.bmp'
+raw_test_y_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/mask/*mask.bmp'
+
+raw_training_x_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/training/images/*.bmp'
+raw_training_y_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/images/*.bmp'
+raw_test_y_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/mask/*mask.bmp'
+
+raw_training_x_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/training/images/*.bmp'
+raw_training_y_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/training/manual/*.bmp'
+raw_test_x_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/images/*.bmp'
+raw_test_y_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/manual/*.bmp'
+raw_test_mask_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/mask/*mask.bmp'
+
 raw_data_path = None
 raw_data_path_DRIVE = [raw_training_x_path_DRIVE, raw_training_y_path_DRIVE, raw_test_x_path_DRIVE,
                        raw_test_y_path_DRIVE, raw_test_mask_path_DRIVE]
@@ -31,11 +67,30 @@ raw_data_path_CHASEDB1 = [raw_training_x_path_CHASEDB1, raw_training_y_path_CHAS
 raw_data_path_STARE = [raw_training_x_path_STARE, raw_training_y_path_STARE, raw_test_x_path_STARE,
                        raw_test_y_path_STARE, raw_test_mask_path_STARE]
 
+raw_data_path_MMS_P1_385_141_3 = [raw_training_x_path_MMS_P1_385_141_3, raw_training_y_path_MMS_P1_385_141_3, raw_test_x_path_MMS_P1_385_141_3,
+                       raw_test_y_path_MMS_P1_385_141_3, raw_test_mask_path_MMS_P1_385_141_3]
+raw_data_path_MMS_P2_385_141_3 = [raw_training_x_path_MMS_P2_385_141_3, raw_training_y_path_MMS_P2_385_141_3, raw_test_x_path_MMS_P2_385_141_3,
+                       raw_test_y_path_MMS_P2_385_141_3, raw_test_mask_path_MMS_P2_385_141_3]
+raw_data_path_MMS_P3_385_141_3 = [raw_training_x_path_MMS_P3_385_141_3, raw_training_y_path_MMS_P3_385_141_3, raw_test_x_path_MMS_P3_385_141_3,
+                       raw_test_y_path_MMS_P3_385_141_3, raw_test_mask_path_MMS_P3_385_141_3]
+
+raw_data_path_MMS_P1_385_385_3 = [raw_training_x_path_MMS_P1_385_385_3, raw_training_y_path_MMS_P1_385_385_3, raw_test_x_path_MMS_P1_385_385_3,
+                       raw_test_y_path_MMS_P1_385_385_3, raw_test_mask_path_MMS_P1_385_385_3]
+raw_data_path_MMS_P2_385_385_3 = [raw_training_x_path_MMS_P2_385_385_3, raw_training_y_path_MMS_P2_385_385_3, raw_test_x_path_MMS_P2_385_385_3,
+                       raw_test_y_path_MMS_P2_385_385_3, raw_test_mask_path_MMS_P2_385_385_3]
+raw_data_path_MMS_P3_385_385_3 = [raw_training_x_path_MMS_P3_385_385_3, raw_training_y_path_MMS_P3_385_385_3, raw_test_x_path_MMS_P3_385_385_3,
+                       raw_test_y_path_MMS_P3_385_385_3, raw_test_mask_path_MMS_P3_385_385_3]
 HDF5_data_path = './data/HDF5/'
 
 DESIRED_DATA_SHAPE_DRIVE = (576, 576)
 DESIRED_DATA_SHAPE_CHASEDB1 = (960, 960)
 DESIRED_DATA_SHAPE_STARE = (592, 592)
+DESIRED_DATA_SHAPE_MMS_P1_385_141_3 = (385, 141)
+DESIRED_DATA_SHAPE_MMS_P2_385_141_3 = (385, 141)
+DESIRED_DATA_SHAPE_MMS_P3_385_141_3 = (385, 141)
+DESIRED_DATA_SHAPE_MMS_P1_385_385_3 = (385, 385)
+DESIRED_DATA_SHAPE_MMS_P2_385_385_3 = (385, 385)
+DESIRED_DATA_SHAPE_MMS_P3_385_385_3 = (385, 385)
 DESIRED_DATA_SHAPE = None
 
 
@@ -100,6 +155,18 @@ def prepareDataset(dataset):
         DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_CHASEDB1
     elif dataset == 'STARE':
         DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_STARE
+    elif dataset == 'MMS_P1_385_141_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P1_385_141_3
+    elif dataset == 'MMS_P2_385_141_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P2_385_141_3
+    elif dataset == 'MMS_P3_385_141_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P3_385_141_3
+    elif dataset == 'MMS_P1_385_385_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P1_385_385_3
+    elif dataset == 'MMS_P2_385_385_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P2_385_385_3
+    elif dataset == 'MMS_P3_385_385_3':
+        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P3_385_385_3
 
     if dataset == 'DRIVE':
         raw_data_path = raw_data_path_DRIVE
@@ -107,6 +174,18 @@ def prepareDataset(dataset):
         raw_data_path = raw_data_path_CHASEDB1
     elif dataset == 'STARE':
         raw_data_path = raw_data_path_STARE
+    elif dataset == 'MMS_P1_385_141_3':
+        raw_data_path = raw_data_path_MMS_P1_385_141_3
+    elif dataset == 'MMS_P2_385_141_3':
+        raw_data_path = raw_data_path_MMS_P2_385_141_3
+    elif dataset == 'MMS_P3_385_141_3':
+        raw_data_path = raw_data_path_MMS_P3_385_141_3
+    elif dataset == 'MMS_P1_385_385_3':
+        raw_data_path = raw_data_path_MMS_P1_385_385_3
+    elif dataset == 'MMS_P2_385_385_3':
+        raw_data_path = raw_data_path_MMS_P2_385_385_3
+    elif dataset == 'MMS_P3_385_385_3':
+        raw_data_path = raw_data_path_MMS_P3_385_385_3
 
     if isHDF5exists(raw_data_path, HDF5_data_path):
         return
@@ -131,6 +210,18 @@ def getTrainingData(XorY, dataset):
         raw_training_x_path, raw_training_y_path = raw_data_path_CHASEDB1[:2]
     elif dataset == 'STARE':
         raw_training_x_path, raw_training_y_path = raw_data_path_STARE[:2]
+    elif dataset == 'MMS_P1_385_141_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P1_385_141_3[:2]
+    elif dataset == 'MMS_P2_385_141_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P2_385_141_3[:2]
+    elif dataset == 'MMS_P3_385_141_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P3_385_141_3[:2]
+    elif dataset == 'MMS_P1_385_385_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P1_385_385_3[:2]
+    elif dataset == 'MMS_P2_385_385_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P2_385_385_3[:2]
+    elif dataset == 'MMS_P3_385_385_3':
+        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P3_385_385_3[:2]
 
     if XorY == 0:
         raw_splited = raw_training_x_path.split('/')
@@ -153,6 +244,18 @@ def getTestData(XorYorMask, dataset):
         raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_CHASEDB1[2:]
     elif dataset == 'STARE':
         raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_STARE[2:]
+    elif dataset == 'MMS_P1_385_141_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P1_385_141_3[2:]
+    elif dataset == 'MMS_P2_385_141_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P2_385_141_3[2:]
+    elif dataset == 'MMS_P3_385_141_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P3_385_141_3[2:]
+    elif dataset == 'MMS_P1_385_385_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P1_385_385_3[2:]
+    elif dataset == 'MMS_P2_385_385_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P2_385_385_3[2:]
+    elif dataset == 'MMS_P3_385_385_3':
+        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P3_385_385_3[2:]
 
     if XorYorMask == 0:
         raw_splited = raw_test_x_path.split('/')

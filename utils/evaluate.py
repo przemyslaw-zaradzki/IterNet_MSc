@@ -14,7 +14,7 @@ import numpy as np
 import pickle
 
 
-def evaluate(y_true, y_scores, dataset):
+def evaluate(y_true, y_scores, dataset, model_name):
     y_true = np.array(y_true)
     y_scores = np.array(y_scores)
 
@@ -73,7 +73,7 @@ def evaluate(y_true, y_scores, dataset):
     F1_score = f1_score(y_true, y_pred, labels=None, average='binary', sample_weight=None)
     print("\nF1 score (F-measure): " + str(F1_score))
     # Save the results
-    file_perf = open(f'./output/{dataset}/performances.txt', 'w')
+    file_perf = open(f'./output/{dataset}_{model_name}/performances.txt', 'w')
     file_perf.write("Area under the ROC curve: " + str(AUC_ROC)
                     + "\nArea under Precision-Recall curve: " + str(AUC_prec_rec)
                     + "\nJaccard similarity score: " + str(jaccard_index)

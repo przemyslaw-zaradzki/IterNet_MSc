@@ -1,4 +1,5 @@
 import numpy as np
+import argparse
 import os
 import time
 from datetime import datetime
@@ -8,8 +9,8 @@ from keras.utils import plot_model
 from utils import define_model, prepare_dataset
 
 
-def train(iteration=3, DATASET='DRIVE', crop_size=128, need_au=True, ACTIVATION='ReLU', dropout=0.1, batch_size=32,
-          repeat=4, minimum_kernel=32, epochs=200):
+def train(iteration=3, DATASET='DRIVE', crop_size=32, need_au=True, ACTIVATION='ReLU', dropout=0.1, batch_size=32,
+          repeat=4, minimum_kernel=32, epochs=15):
     model_name = f"Final_Emer_Iteration_{iteration}_cropsize_{crop_size}_epochs_{epochs}"
 
     print("Model : %s" % model_name)
@@ -53,5 +54,12 @@ def train(iteration=3, DATASET='DRIVE', crop_size=128, need_au=True, ACTIVATION=
 
 
 if __name__ == "__main__":
-    train(iteration=3, DATASET='DRIVE',  # DRIVE, CHASEDB1 or STARE
-          batch_size=32, epochs=200)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--iteration', dest='iteration', type=int, default=3, required=False,
+                            help='number of mini U-Net repetitions')
+    parser.add_argument('--DATASET', type=str, required=False, default='DRIVE')
+    parser.add_argument('--batch_size', dest='batch_size', type=int, default=32, required=False)
+    parser.add_argument('--epochs', dest='epochs', type=int, default=200, required=False)
+    args = parser.parse_args()
+
+    train(**vars(args))

@@ -89,5 +89,5 @@ def evaluate(y_true, y_scores, dataset, model_name):
 
     plt.show()
 
-    with open(f'./output/{dataset}/auc.pickle', 'wb') as handle:
+    with open(f'./output/{dataset}_{model_name}/auc.pickle', 'wb') as handle:
         pickle.dump([fpr, tpr], handle, protocol=pickle.HIGHEST_PROTOCOL)

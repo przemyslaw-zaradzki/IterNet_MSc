@@ -59,7 +59,7 @@ if __name__ == "__main__":
                             help='number of mini U-Net repetitions')
     parser.add_argument('--DATASET', type=str, required=False, default='DRIVE')
     parser.add_argument('--batch_size', dest='batch_size', type=int, default=32, required=False)
-    parser.add_argument('--epochs', dest='epochs', type=int, default=200, required=False)
+    parser.add_argument('--epochs', dest='epochs', type=int, default=25, required=False)
     args = parser.parse_args()
 
     train(**vars(args))

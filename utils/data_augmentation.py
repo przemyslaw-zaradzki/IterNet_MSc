@@ -109,4 +109,8 @@ def random_augmentation(img, mask):
     img, mask = random_flip(img, mask, u=0.5)
     img, mask = random_shift(img, mask, w_limit=(-0.1, 0.1), h_limit=(-0.1, 0.1), u=0.05)
     img, mask = random_zoom(img, mask, zoom_range=(0.8, 1.2), u=0.05)
+
+    mask[mask>=0.5] = 1
+    mask[mask<0.5] = 0
+
     return img, mask

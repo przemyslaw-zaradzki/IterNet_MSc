@@ -43,11 +43,11 @@ def predict(ACTIVATION='ReLU', dropout=0.1, batch_size=32, repeat=4, minimum_ker
         IMAGE_SIZE = (385, 141)
     elif DATASET == 'MMS_P3_385_141_3':
         IMAGE_SIZE = (385, 141)
-    elif DATASET == 'MMS_P1_385_385_3':
+    elif 'MMS_P1_385_385_3' in DATASET:
         IMAGE_SIZE = (385, 385)
-    elif DATASET == 'MMS_P2_385_385_3':
+    elif 'MMS_P2_385_385_3' in DATASET:
         IMAGE_SIZE = (385, 385)
-    elif DATASET == 'MMS_P3_385_385_3':
+    elif 'MMS_P3_385_385_3' in DATASET:
         IMAGE_SIZE = (385, 385)
 
     gt_list_out = {}

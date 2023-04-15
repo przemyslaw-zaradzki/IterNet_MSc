@@ -5,92 +5,64 @@ from PIL import Image
 from glob import glob
 from skimage.transform import resize
 
-raw_training_x_path_DRIVE = './data/DRIVE/training/images/*.tif'
-raw_training_y_path_DRIVE = './data/DRIVE/training/1st_manual/*.gif'
-raw_test_x_path_DRIVE = './data/DRIVE/test/images/*.tif'
-raw_test_y_path_DRIVE = './data/DRIVE/test/1st_manual/*.gif'
-raw_test_mask_path_DRIVE = './data/DRIVE/test/mask/*.gif'
-
-raw_training_x_path_CHASEDB1 = './data/CHASEDB1/training/images/*.jpg'
-raw_training_y_path_CHASEDB1 = './data/CHASEDB1/training/1st_manual/*1stHO.png'
-raw_test_x_path_CHASEDB1 = './data/CHASEDB1/test/images/*.jpg'
-raw_test_y_path_CHASEDB1 = './data/CHASEDB1/test/1st_manual/*1stHO.png'
-raw_test_mask_path_CHASEDB1 = './data/CHASEDB1/test/mask/*mask.png'
-
-raw_training_x_path_STARE = './data/STARE/training/stare-images/*.ppm'
-raw_training_y_path_STARE = './data/STARE/training/labels-ah/*.ppm'
-raw_test_x_path_STARE = './data/STARE/test/stare-images/*.ppm'
-raw_test_y_path_STARE = './data/STARE/test/labels-ah/*.ppm'
-raw_test_mask_path_STARE = './data/STARE/test/mask/*mask.png'
-
-raw_training_x_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/training/images/*.bmp'
-raw_training_y_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/images/*.bmp'
-raw_test_y_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P1_385_141_3 = './data/MMS_P1_385_141_3/test/mask/*mask.bmp'
-
-raw_training_x_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/training/images/*.bmp'
-raw_training_y_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/images/*.bmp'
-raw_test_y_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P2_385_141_3 = './data/MMS_P2_385_141_3/test/mask/*mask.bmp'
-
-raw_training_x_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/training/images/*.bmp'
-raw_training_y_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/images/*.bmp'
-raw_test_y_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P3_385_141_3 = './data/MMS_P3_385_141_3/test/mask/*mask.bmp'
-
-raw_training_x_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/training/images/*.bmp'
-raw_training_y_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/images/*.bmp'
-raw_test_y_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P1_385_385_3 = './data/MMS_P1_385_385_3/test/mask/*mask.bmp'
-
-raw_training_x_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/training/images/*.bmp'
-raw_training_y_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/images/*.bmp'
-raw_test_y_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P2_385_385_3 = './data/MMS_P2_385_385_3/test/mask/*mask.bmp'
-
-raw_training_x_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/training/images/*.bmp'
-raw_training_y_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/training/manual/*.bmp'
-raw_test_x_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/images/*.bmp'
-raw_test_y_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/manual/*.bmp'
-raw_test_mask_path_MMS_P3_385_385_3 = './data/MMS_P3_385_385_3/test/mask/*mask.bmp'
-
 raw_data_path = None
-raw_data_path_DRIVE = [raw_training_x_path_DRIVE, raw_training_y_path_DRIVE, raw_test_x_path_DRIVE,
-                       raw_test_y_path_DRIVE, raw_test_mask_path_DRIVE]
-raw_data_path_CHASEDB1 = [raw_training_x_path_CHASEDB1, raw_training_y_path_CHASEDB1, raw_test_x_path_CHASEDB1,
-                          raw_test_y_path_CHASEDB1, raw_test_mask_path_CHASEDB1]
-raw_data_path_STARE = [raw_training_x_path_STARE, raw_training_y_path_STARE, raw_test_x_path_STARE,
-                       raw_test_y_path_STARE, raw_test_mask_path_STARE]
-
-raw_data_path_MMS_P1_385_141_3 = [raw_training_x_path_MMS_P1_385_141_3, raw_training_y_path_MMS_P1_385_141_3, raw_test_x_path_MMS_P1_385_141_3,
-                       raw_test_y_path_MMS_P1_385_141_3, raw_test_mask_path_MMS_P1_385_141_3]
-raw_data_path_MMS_P2_385_141_3 = [raw_training_x_path_MMS_P2_385_141_3, raw_training_y_path_MMS_P2_385_141_3, raw_test_x_path_MMS_P2_385_141_3,
-                       raw_test_y_path_MMS_P2_385_141_3, raw_test_mask_path_MMS_P2_385_141_3]
-raw_data_path_MMS_P3_385_141_3 = [raw_training_x_path_MMS_P3_385_141_3, raw_training_y_path_MMS_P3_385_141_3, raw_test_x_path_MMS_P3_385_141_3,
-                       raw_test_y_path_MMS_P3_385_141_3, raw_test_mask_path_MMS_P3_385_141_3]
-
-raw_data_path_MMS_P1_385_385_3 = [raw_training_x_path_MMS_P1_385_385_3, raw_training_y_path_MMS_P1_385_385_3, raw_test_x_path_MMS_P1_385_385_3,
-                       raw_test_y_path_MMS_P1_385_385_3, raw_test_mask_path_MMS_P1_385_385_3]
-raw_data_path_MMS_P2_385_385_3 = [raw_training_x_path_MMS_P2_385_385_3, raw_training_y_path_MMS_P2_385_385_3, raw_test_x_path_MMS_P2_385_385_3,
-                       raw_test_y_path_MMS_P2_385_385_3, raw_test_mask_path_MMS_P2_385_385_3]
-raw_data_path_MMS_P3_385_385_3 = [raw_training_x_path_MMS_P3_385_385_3, raw_training_y_path_MMS_P3_385_385_3, raw_test_x_path_MMS_P3_385_385_3,
-                       raw_test_y_path_MMS_P3_385_385_3, raw_test_mask_path_MMS_P3_385_385_3]
 HDF5_data_path = './data/HDF5/'
 
-DESIRED_DATA_SHAPE_DRIVE = (576, 576)
-DESIRED_DATA_SHAPE_CHASEDB1 = (960, 960)
-DESIRED_DATA_SHAPE_STARE = (592, 592)
-DESIRED_DATA_SHAPE_MMS_P1_385_141_3 = (385, 141)
-DESIRED_DATA_SHAPE_MMS_P2_385_141_3 = (385, 141)
-DESIRED_DATA_SHAPE_MMS_P3_385_141_3 = (385, 141)
-DESIRED_DATA_SHAPE_MMS_P1_385_385_3 = (385, 385)
-DESIRED_DATA_SHAPE_MMS_P2_385_385_3 = (385, 385)
-DESIRED_DATA_SHAPE_MMS_P3_385_385_3 = (385, 385)
+
+def get_raw_data_path(dataset):
+    if 'DRIVE' in dataset:
+        raw_training_x_path = f'./data/{dataset}/training/images/*.tif'
+        raw_training_y_path = f'./data/{dataset}/training/1st_manual/*.gif'
+        raw_test_x_path = f'./data/{dataset}/test/images/*.tif'
+        raw_test_y_path = f'./data/{dataset}/test/1st_manual/*.gif'
+        raw_test_mask_path = f'./data/{dataset}/test/mask/*.gif'
+    elif 'CHASEDB1' in dataset:
+        raw_training_x_path = f'./data/{dataset}/training/images/*.jpg'
+        raw_training_y_path = f'./data/{dataset}/training/1st_manual/*1stHO.png'
+        raw_test_x_path = f'./data/{dataset}/test/images/*.jpg'
+        raw_test_y_path = f'./data/{dataset}/test/1st_manual/*1stHO.png'
+        raw_test_mask_path = f'./data/{dataset}/test/mask/*mask.png'
+    elif 'STARE' in dataset:
+        raw_training_x_path = f'./data/{dataset}/training/stare-images/*.ppm'
+        raw_training_y_path = f'./data/{dataset}/training/labels-ah/*.ppm'
+        raw_test_x_path = f'./data/{dataset}/test/stare-images/*.ppm'
+        raw_test_y_path = f'./data/{dataset}/test/labels-ah/*.ppm'
+        raw_test_mask_path = f'./data/{dataset}/test/mask/*mask.png'
+    elif 'MMS' in dataset:
+        raw_training_x_path = f'./data/{dataset}/training/images/*.bmp'
+        raw_training_y_path = f'./data/{dataset}/training/manual/*.bmp'
+        raw_test_x_path = f'./data/{dataset}/test/images/*.bmp'
+        raw_test_y_path = f'./data/{dataset}/test/manual/*.bmp'
+        raw_test_mask_path = f'./data/{dataset}/test/mask/*mask.bmp'
+    else:
+        return
+
+    _raw_data_path = [raw_training_x_path, raw_training_y_path, raw_test_x_path,
+                        raw_test_y_path, raw_test_mask_path]
+
+    return _raw_data_path
+
+
+def get_desired_data_shape(dataset):
+    if 'DRIVE' in dataset:
+        return (576, 576)
+    elif 'CHASEDB1' in dataset:
+        return (960, 960)
+    elif 'STARE' in dataset:
+        return (592, 592)
+    elif 'MMS_P1_385_141_3' in dataset:
+        return (385, 141)
+    elif 'MMS_P2_385_141_3' in dataset:
+        return (385, 141)
+    elif 'MMS_P3_385_141_3' in dataset:
+        return (385, 141)
+    elif 'MMS_P1_385_385_3' in dataset:
+        return (385, 385)
+    elif 'MMS_P2_385_385_3' in dataset:
+        return (385, 385)
+    elif 'MMS_P3_385_385_3' in dataset:
+        return (385, 385)
+
 DESIRED_DATA_SHAPE = None
 
 
@@ -146,46 +118,11 @@ def createHDF5(data, HDF5_data_path):
 
 
 def prepareDataset(dataset):
-    global raw_data_path, HDF5_data_path, raw_data_path_DRIVE, raw_data_path_CHASEDB1, raw_data_path_STARE
-
-    global DESIRED_DATA_SHAPE
-    if dataset == 'DRIVE':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_DRIVE
-    elif dataset == 'CHASEDB1':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_CHASEDB1
-    elif dataset == 'STARE':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_STARE
-    elif dataset == 'MMS_P1_385_141_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P1_385_141_3
-    elif dataset == 'MMS_P2_385_141_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P2_385_141_3
-    elif dataset == 'MMS_P3_385_141_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P3_385_141_3
-    elif dataset == 'MMS_P1_385_385_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P1_385_385_3
-    elif dataset == 'MMS_P2_385_385_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P2_385_385_3
-    elif dataset == 'MMS_P3_385_385_3':
-        DESIRED_DATA_SHAPE = DESIRED_DATA_SHAPE_MMS_P3_385_385_3
-
-    if dataset == 'DRIVE':
-        raw_data_path = raw_data_path_DRIVE
-    elif dataset == 'CHASEDB1':
-        raw_data_path = raw_data_path_CHASEDB1
-    elif dataset == 'STARE':
-        raw_data_path = raw_data_path_STARE
-    elif dataset == 'MMS_P1_385_141_3':
-        raw_data_path = raw_data_path_MMS_P1_385_141_3
-    elif dataset == 'MMS_P2_385_141_3':
-        raw_data_path = raw_data_path_MMS_P2_385_141_3
-    elif dataset == 'MMS_P3_385_141_3':
-        raw_data_path = raw_data_path_MMS_P3_385_141_3
-    elif dataset == 'MMS_P1_385_385_3':
-        raw_data_path = raw_data_path_MMS_P1_385_385_3
-    elif dataset == 'MMS_P2_385_385_3':
-        raw_data_path = raw_data_path_MMS_P2_385_385_3
-    elif dataset == 'MMS_P3_385_385_3':
-        raw_data_path = raw_data_path_MMS_P3_385_385_3
+    global raw_data_path, HDF5_data_path
+    global DESIRED_DATA_SHAPE 
+    
+    DESIRED_DATA_SHAPE = get_desired_data_shape(dataset)
+    raw_data_path = get_raw_data_path(dataset)
 
     if isHDF5exists(raw_data_path, HDF5_data_path):
         return
@@ -202,26 +139,10 @@ def prepareDataset(dataset):
 
 
 def getTrainingData(XorY, dataset):
-    global HDF5_data_path, raw_data_path_DRIVE, raw_data_path_CHASEDB1, raw_data_path_STARE
+    global HDF5_data_path
 
-    if dataset == 'DRIVE':
-        raw_training_x_path, raw_training_y_path = raw_data_path_DRIVE[:2]
-    elif dataset == 'CHASEDB1':
-        raw_training_x_path, raw_training_y_path = raw_data_path_CHASEDB1[:2]
-    elif dataset == 'STARE':
-        raw_training_x_path, raw_training_y_path = raw_data_path_STARE[:2]
-    elif dataset == 'MMS_P1_385_141_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P1_385_141_3[:2]
-    elif dataset == 'MMS_P2_385_141_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P2_385_141_3[:2]
-    elif dataset == 'MMS_P3_385_141_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P3_385_141_3[:2]
-    elif dataset == 'MMS_P1_385_385_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P1_385_385_3[:2]
-    elif dataset == 'MMS_P2_385_385_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P2_385_385_3[:2]
-    elif dataset == 'MMS_P3_385_385_3':
-        raw_training_x_path, raw_training_y_path = raw_data_path_MMS_P3_385_385_3[:2]
+    raw_data_path = get_raw_data_path(dataset)
+    raw_training_x_path, raw_training_y_path = raw_data_path[:2]
 
     if XorY == 0:
         raw_splited = raw_training_x_path.split('/')
@@ -236,26 +157,9 @@ def getTrainingData(XorY, dataset):
 
 
 def getTestData(XorYorMask, dataset):
-    global HDF5_data_path, raw_data_path_DRIVE, raw_data_path_CHASEDB1, raw_data_path_STARE
+    global HDF5_data_path
 
-    if dataset == 'DRIVE':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_DRIVE[2:]
-    elif dataset == 'CHASEDB1':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_CHASEDB1[2:]
-    elif dataset == 'STARE':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_STARE[2:]
-    elif dataset == 'MMS_P1_385_141_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P1_385_141_3[2:]
-    elif dataset == 'MMS_P2_385_141_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P2_385_141_3[2:]
-    elif dataset == 'MMS_P3_385_141_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P3_385_141_3[2:]
-    elif dataset == 'MMS_P1_385_385_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P1_385_385_3[2:]
-    elif dataset == 'MMS_P2_385_385_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P2_385_385_3[2:]
-    elif dataset == 'MMS_P3_385_385_3':
-        raw_test_x_path, raw_test_y_path, raw_test_mask_path = raw_data_path_MMS_P3_385_385_3[2:]
+    raw_test_x_path, raw_test_y_path, raw_test_mask_path = get_raw_data_path(dataset)[2:]
 
     if XorYorMask == 0:
         raw_splited = raw_test_x_path.split('/')

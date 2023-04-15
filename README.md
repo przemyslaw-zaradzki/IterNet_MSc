@@ -1,4 +1,4 @@
-# Retina Vessel Segmentation from OCT Fundus Reconstruction with U-net
+# Retina Vessel Segmentation from OCT Fundus Reconstruction with IterNet
 
 This software is forked from conscienceli/IterNet and allows segmentation of blood vessels in **OCT reconstruction images** of the human eye retina. Details of the application of the software can be found in the paper:
 
